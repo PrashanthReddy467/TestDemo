@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite id="1481dcb6-8c51-4015-bdfa-582fc9b01413" name="TestSuite1" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="945e405e-9e93-4f47-860c-203940db279c" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="PartyTestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="updateParty" id="c671f57d-f3f0-4ece-97e0-90528366f6c2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PartyHttpBinding</con:interface><con:operation>addParty</con:operation><con:request name="updateParty" id="30a01b00-8213-4c92-b150-47342a3fff3e"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.11.13.227:9080/MDMWSProvider/MDMService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:par="http://www.ibm.com/mdm/port/Party" xmlns:sch="http://www.ibm.com/mdm/schema">
+   <soapenv:Header>
+          <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+      <wsse:UsernameToken xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="UsernameToken-8429706">
+        <wsse:Username>mdmadmin</wsse:Username>
+        <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">MDMpro098!</wsse:Password>
+        <wsse:Nonce EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">ahpQ9NthEjz6cF7yPcfz8A==</wsse:Nonce>
+        <wsu:Created>2016-06-28T09:33:01.636Z</wsu:Created>
+      </wsse:UsernameToken>
+    </wsse:Security>
+  </soapenv:Header>
+   <soapenv:Body>
+      <par:updateParty>
+         <RequestControl>
+                                           
+            <requestID>1001500</requestID>
+                                           
+            <DWLControl>
+                                                              
+               <requesterName>cusadmin</requesterName>
+                                                              
+               <requesterLanguage>100</requesterLanguage>
+                                              
+            </DWLControl>
+                           
+         </RequestControl>
+   <TCRMOrganizationBObj>
+            
+            <DisplayName>Sole  Trust 118011</DisplayName>
+            <PreferredLanguageType>100</PreferredLanguageType>
+            <PreferredLanguageValue>English</PreferredLanguageValue>
+            <PartyType>O</PartyType>
+            <CreatedDate>2017-11-27 08:10:47.364</CreatedDate>
+            <SinceDate>2010-01-01 00:00:00.0</SinceDate>
+            <PartyActiveIndicator>Y</PartyActiveIndicator>
+            <LastVerifiedDate>2014-07-09 00:00:00.0</LastVerifiedDate>
+            <SourceIdentifierType>1000022</SourceIdentifierType>
+            <SourceIdentifierValue>Bell</SourceIdentifierValue>
+            <PartyLastUpdateDate>2017-12-03 04:17:42.014</PartyLastUpdateDate>
+            
+            <OrganizationPartyId>418551178824769329</OrganizationPartyId>
+            <OrganizationType>1000004</OrganizationType>
+            <OrganizationValue>Trust</OrganizationValue>
+            <EstablishedDate>2013-01-01 00:00:00.0</EstablishedDate>
+            <OrganizationLastUpdateDate>2017-12-03 04:17:42.11</OrganizationLastUpdateDate>
+            
+            <TCRMOrganizationNameBObj>
+               <OrganizationNameIdPK>414351178824824050</OrganizationNameIdPK>
+               <OrganizationPartyId>418551178824769329</OrganizationPartyId>
+               <OrganizationName>Sole  Trust 118011</OrganizationName>
+               <StartDate>2015-09-02 00:00:00.0</StartDate>
+               <NameUsageType>1000001</NameUsageType>
+               <NameUsageValue>Legal name</NameUsageValue>
+               <SourceIdentifierType>1000001</SourceIdentifierType>
+               <SourceIdentifierValue>External Registry</SourceIdentifierValue>
+               <OrganizationNameLastUpdateDate>2017-12-12 05:35:21.002</OrganizationNameLastUpdateDate>
+               
+               <SOrganizationName>SOLE  TRUST 118011</SOrganizationName>
+            </TCRMOrganizationNameBObj>
+
+
+
+</TCRMOrganizationBObj>
+       
+      </par:updateParty>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="3c6c3ab4-1e98-4dad-b782-9dfbbd56a39b"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="transfer" name="Property Transfer" id="8ff8df28-8e40-45d1-a945-7a6f47155f3b"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>PartyId</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>updateParty</con:sourceStep><con:sourcePath>//*:TCRMOrganizationBObj/*:PartyId</con:sourcePath><con:targetType>PartyId</con:targetType><con:targetStep>Properties</con:targetStep><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:testStep type="properties" name="Properties" id="1c6bb7b0-7193-4f11-a15d-30427467be79"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>PartyId</con:name><con:value>418551178824769329</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="request" name="getParty" id="49ba4c6d-9af4-4a9e-b3d8-d74d3a0624b2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PartyHttpBinding</con:interface><con:operation>addParty</con:operation><con:request name="getParty" id="30a01b00-8213-4c92-b150-47342a3fff3e"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.11.13.227:9080/MDMWSProvider/MDMService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:par="http://www.ibm.com/mdm/port/Party" xmlns:sch="http://www.ibm.com/mdm/schema">
+ <soapenv:Header>
+          <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+      <wsse:UsernameToken xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="UsernameToken-8429706">
+        <wsse:Username>mdmadmin</wsse:Username>
+        <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">MDMpro098!</wsse:Password>
+        <wsse:Nonce EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">ahpQ9NthEjz6cF7yPcfz8A==</wsse:Nonce>
+        <wsu:Created>2016-06-28T09:33:01.636Z</wsu:Created>
+      </wsse:UsernameToken>
+    </wsse:Security>
+  </soapenv:Header>
+   <soapenv:Body>
+      <par:getParty>
+           <RequestControl>
+                                           
+            <requestID>1001500</requestID>
+                                           
+            <DWLControl>
+                                                              
+               <requesterName>cusadmin</requesterName>
+                                                              
+               <requesterLanguage>100</requesterLanguage>
+                                              
+            </DWLControl>
+                           
+         </RequestControl>
+         <sch:InquiryParam>
+         <InquiryParam>
+           <tcrmParam name= "PartyId">${Properties#PartyId}</tcrmParam>
+      <tcrmParam name= "PartyType">O</tcrmParam>
+           <tcrmParam name= "InquiryLevel">4</tcrmParam>
+         </sch:InquiryParam>
+      </par:getParty>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="3c6c3ab4-1e98-4dad-b782-9dfbbd56a39b"/><con:assertion type="Simple Contains" id="460a933c-c2f7-4aa9-850d-ba28c5608cba" name="Contains"><con:configuration><token>SUCCESS</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:tearDownScript/><con:properties/></con:testCase><con:testCase id="2a23616a-d890-4da8-96ec-53a49da077a6" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="ContractTestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="getContract" id="2652afd0-a611-41c1-a6a9-b22fc6f8c197"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PartyHttpBinding</con:interface><con:operation>addParty</con:operation><con:request name="getContract" id="30a01b00-8213-4c92-b150-47342a3fff3e"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.11.13.227:9080/MDMWSProvider/MDMService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:par="http://www.ibm.com/mdm/port/Party" xmlns:sch="http://www.ibm.com/mdm/schema">
+  <soapenv:Header>
+          <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+      <wsse:UsernameToken xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="UsernameToken-8429706">
+        <wsse:Username>mdmadmin</wsse:Username>
+        <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">MDMpro098!</wsse:Password>
+        <wsse:Nonce EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">ahpQ9NthEjz6cF7yPcfz8A==</wsse:Nonce>
+        <wsu:Created>2016-06-28T09:33:01.636Z</wsu:Created>
+      </wsse:UsernameToken>
+    </wsse:Security>
+  </soapenv:Header>
+   <soapenv:Body>
+      <par:getContract>
+         <sch:RequestControl>
+            <sch:requestID>1234</sch:requestID>
+            <sch:DWLControl>
+               <!--Optional:-->
+               <sch:requesterName>Keerthi</sch:requesterName>
+               <!--Optional:-->
+               <sch:requesterLanguage>100</sch:requesterLanguage>             
+            </sch:DWLControl>
+         </sch:RequestControl>
+         <sch:InquiryParam>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <sch:tcrmParam name= "ContractId">185651022747352879</sch:tcrmParam>
+<sch:tcrmParam name= "ContractInquiryLevel">2</sch:tcrmParam>
+<sch:tcrmParam name= "PartyInquiryLevel">0</sch:tcrmParam>
+         </sch:InquiryParam>
+      </par:getContract>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="3c6c3ab4-1e98-4dad-b782-9dfbbd56a39b"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="getContractRole" id="38549c80-a9fb-43c6-ab6c-b5a8aedc2ec6"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PartyHttpBinding</con:interface><con:operation>addParty</con:operation><con:request name="getContractRole" id="30a01b00-8213-4c92-b150-47342a3fff3e"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.11.13.227:9080/MDMWSProvider/MDMService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:par="http://www.ibm.com/mdm/port/Party" xmlns:sch="http://www.ibm.com/mdm/schema">
+  <soapenv:Header>
+          <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+      <wsse:UsernameToken xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="UsernameToken-8429706">
+        <wsse:Username>mdmadmin</wsse:Username>
+        <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">MDMpro098!</wsse:Password>
+        <wsse:Nonce EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">ahpQ9NthEjz6cF7yPcfz8A==</wsse:Nonce>
+        <wsu:Created>2016-06-28T09:33:01.636Z</wsu:Created>
+      </wsse:UsernameToken>
+    </wsse:Security>
+  </soapenv:Header>
+   <soapenv:Body>
+      <par:getContractPartyRole>
+         <sch:RequestControl>
+            <sch:requestID>1234</sch:requestID>
+            <sch:DWLControl>
+               <!--Optional:-->
+               <sch:requesterName>Keerthi</sch:requesterName>
+               <!--Optional:-->
+               <sch:requesterLanguage>100</sch:requesterLanguage>             
+            </sch:DWLControl>
+         </sch:RequestControl>
+         <sch:InquiryParam>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <sch:tcrmParam name= "contractRoleId">181251022747371662</sch:tcrmParam>
+
+         </sch:InquiryParam>
+      </par:getContractPartyRole>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="3c6c3ab4-1e98-4dad-b782-9dfbbd56a39b"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/><con:setupScript/><con:tearDownScript>testSuite.testCaseList.each {
+def testSuite="TestSuite1"
+log.info testSuite
+def testCase = it.name
+log.info testCase
+it.testStepList.each {
+def soapuiRequests = it.name
+log.info soapuiRequests
+
+//def soapuiRequests = testRunner.testCase.getTestStepsOfType(com.eviware.soapui.impl.wsdl.teststeps.WsdlTestRequestStep)
+//soapuiRequests.each 
+//{
+log.info "jg"
+def startTime = new Date();
+def cur_Time = startTime.getMonth() + 1 + "_" + startTime.getDate() + "_" + startTime.getHours() + startTime.getMinutes() +startTime.getSeconds()
+def fileName = it.name + "_" + cur_Time
+log.info fileName
+def Request = "D:/Prashan/"
+def folderPath = "D:/Prashan/" + "/Request/";
+def resultFolder = new File(folderPath);
+if(!resultFolder.exists())
+{
+resultFolder.mkdirs();
+}
+def Request1 = "D:/Prashan/"
+def folderPath1 = "D:/Prashan/" + "/Response/";
+def resultFolder1 = new File(folderPath1);
+if(!resultFolder1.exists())
+{
+resultFolder1.mkdirs();
+}
+//def testSuite = testRunner.testCase.testSuite.name;
+//log.info testSuite
+def subfolderPath1 = folderPath+ "/testSuite_Request_";
+new File(subfolderPath1).mkdirs();
+def subfolderPath2 = folderPath1+ "/testSuite_Response_";
+new File(subfolderPath2).mkdirs(); 
+//def testCase = testRunner.testCase.name;
+def subfolderPath3 = subfolderPath1+"//testCase_Request_" +cur_Time;
+new File(subfolderPath3).mkdirs();
+def subfolderPath4 = subfolderPath2+"/testCase_Response_"+cur_Time;
+new File(subfolderPath4).mkdirs();
+log.info fileName
+def inputFileRequest = new File(subfolderPath3+"//Request_"+ fileName+".xml")
+log.info inputFileRequest
+def inputFileResponse = new File(subfolderPath4+"//Response_" + fileName+".xml")
+log.info it.name
+log.info testCase
+//log.info testCase.getTestStepByName(soapuiRequests)
+inputFileRequest.append(context.testCase.getTestStepByName(it.name).getProperty("Request").Value);
+//inputFileResponse.append(context.testCase.getTestStepByName(it.name).getProperty("Response").getvalue());    
+}
+}</con:tearDownScript></con:testSuite>
